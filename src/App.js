@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   render() {
-    const calendarStyle = {
+    const demoStyle = {
       margin: 10,
       padding: 10
     };
@@ -85,8 +85,8 @@ class App extends Component {
     };
 
     return (
-      <div>
-        <Calendar style={calendarStyle} value={this.state.dateTime} change={this.onchange} />
+      <div  style={demoStyle}>
+        <Calendar value={this.state.dateTime} change={this.onchange} />
 
         <Grid {...gridOptions} />
       </div>
