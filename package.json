@@ -1,0 +1,63 @@
+{
+    "name": "kendo-ui-react-wrappers",
+    "version": "2017.3.1-beta.2",
+    "description": "Sample application showcasing Kendo UI react wrappers.",
+    "main": "index.js",
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test --env=jsdom",
+      "eject": "react-scripts eject"
+    },
+    "keywords": [
+      "demo",
+      "react",
+      "Kendo UI"
+    ],
+    "author": "",
+    "private": true,
+    "license": "ISC",
+    "dependencies": {
+      "@progress/kendo-buttons-react-wrapper": "2017.3.1-beta.2",
+      "@progress/kendo-data-query": "^1.0.6",
+      "@progress/kendo-dateinputs-react-wrapper": "2017.3.1-beta.2",
+
+      "@progress/kendo-dropdowns-react-wrapper":"2017.3.1026",
+      "@progress/kendo-grid-react-wrapper": "2017.3.1026",
+      "@progress/kendo-upload-react-wrapper": "2017.3.1026",
+      "@progress/kendo-validator-react-wrapper": "2017.3.1026",  
+
+      "@progress/kendo-inputs-react-wrapper": "2017.3.1-beta.2",
+      "@progress/kendo-layout-react-wrapper": "2017.3.1-beta.2",
+      "@progress/kendo-popups-react-wrapper": "2017.3.1-beta.2",
+      "@progress/kendo-theme-default": "^2.37.0",
+      "@progress/kendo-ui": "~2017.2.504",
+      "@progress/kendo-window-react-wrapper": "2017.3.1-beta.2",
+      "@types/react": "^15.0.34",
+      "@types/react-dom": "^15.5.1",
+      "react": "^15.5.4",
+      "react-dom": "^15.5.4",
+      "react-redux": "^5.0.5",
+      "react-router-dom": "^4.1.2",
+      "redux": "^3.7.2"
+    },
+    "devDependencies": {
+      "@types/react-router-dom": "^4.0.7",
+      "awesome-typescript-loader": "^3.2.1",
+      "babel-core": "^6.24.1",
+      "css-loader": "^0.28.3",
+      "file-loader": "^0.11.2",
+      "glob": "^7.1.2",
+      "image-webpack-loader": "^3.3.1",
+      "node-sass": "^4.5.3",
+      "path": "^0.12.7",
+      "postcss-loader": "^2.0.6",
+      "resolve-url-loader": "^2.1.0",
+      "sass-loader": "^6.0.5",
+      "source-map-loader": "^0.2.1",
+      "style-loader": "^0.18.1",
+      "webpack": "^2.6.0",
+      "webpack-dev-server": "^2.4.5"
+    }
+  }
+  
