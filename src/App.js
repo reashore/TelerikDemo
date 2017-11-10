@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import '@progress/kendo-theme-default/dist/all.css';
 import { Calendar } from '@progress/kendo-dateinputs-react-wrapper';
 import { Grid } from '@progress/kendo-grid-react-wrapper';
+import { Menu, SubMenu, MenuItem } from '@progress/kendo-layout-react-wrapper';
 import { kendo } from "@progress/kendo-ui";
 
 class App extends Component {
@@ -12,13 +13,17 @@ class App extends Component {
       dateTime: new Date()
     };
 
-    this.onchange = this.onchange.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.onSelect = this.onSelect.bind(this);
   }
 
-  onchange(event) {
-    this.state({
-      dateTime: event.sender.value()
-    })
+  onChange(event) {
+    this.state({dateTime: event.sender.value()});
+  }
+
+  onSelect(event) {
+    // eslint-disable-next-line
+    console.log("Menu item selected =", event.target)
   }
 
   render() {
@@ -84,9 +89,127 @@ class App extends Component {
       ]
     };
 
+    const menuSource = [
+      {
+        text: 'Menu1',
+        items: [{ text: "MenuItem1" }, { text: "MenuItem2" }, { text: "MenuItem3" }]
+      },
+      {
+        text: 'Menu2',
+        items: [{ text: "MenuItem1" }, { text: "MenuItem2" }, { text: "MenuItem3" }]
+      },
+      {
+        text: 'Menu3',
+        items: [{ text: "MenuItem1" }, { text: "MenuItem2" }, { text: "MenuItem3" }]
+      }
+    ];
+
     return (
-      <div  style={demoStyle}>
-        <Calendar value={this.state.dateTime} change={this.onchange} />
+      <div style={demoStyle}>
+        <h1>Telerik Controls Demo</h1>
+
+        <Menu select={this.onSelect}>
+          <MenuItem>
+            Menu1
+                <SubMenu>
+              <MenuItem>
+                MenuItem1
+                        <SubMenu>
+                  <MenuItem>SubMenuItem1</MenuItem>
+                  <MenuItem>SubMenuItem2</MenuItem>
+                  <MenuItem>SubMenuItem3</MenuItem>
+                </SubMenu>
+              </MenuItem>
+              <MenuItem>
+                MenuItem2
+                        <SubMenu>
+                  <MenuItem>SubMenuItem1</MenuItem>
+                  <MenuItem>SubMenuItem2</MenuItem>
+                  <MenuItem>SubMenuItem3</MenuItem>
+                </SubMenu>
+              </MenuItem>
+              <MenuItem>
+                MenuItem3
+                        <SubMenu>
+                  <MenuItem>SubMenuItem1</MenuItem>
+                  <MenuItem>SubMenuItem2</MenuItem>
+                  <MenuItem>SubMenuItem3</MenuItem>
+                </SubMenu>
+              </MenuItem>
+              <MenuItem>
+                MenuItem3
+                    </MenuItem>
+            </SubMenu>
+          </MenuItem>
+          <MenuItem>
+            Menu2
+                <SubMenu>
+              <MenuItem>
+                MenuItem1
+                        <SubMenu>
+                  <MenuItem>SubMenuItem1</MenuItem>
+                  <MenuItem>SubMenuItem2</MenuItem>
+                  <MenuItem>SubMenuItem3</MenuItem>
+                </SubMenu>
+              </MenuItem>
+              <MenuItem>
+                MenuItem2
+                        <SubMenu>
+                  <MenuItem>SubMenuItem1</MenuItem>
+                  <MenuItem>SubMenuItem2</MenuItem>
+                  <MenuItem>SubMenuItem3</MenuItem>
+                </SubMenu>
+              </MenuItem>
+              <MenuItem>
+                MenuItem3
+                        <SubMenu>
+                  <MenuItem>SubMenuItem1</MenuItem>
+                  <MenuItem>SubMenuItem2</MenuItem>
+                  <MenuItem>SubMenuItem3</MenuItem>
+                </SubMenu>
+              </MenuItem>
+              <MenuItem>
+                MenuItem3
+                    </MenuItem>
+            </SubMenu>
+          </MenuItem>
+          <MenuItem>
+            Menu3
+                <SubMenu>
+              <MenuItem>
+                MenuItem1
+                        <SubMenu>
+                  <MenuItem>SubMenuItem1</MenuItem>
+                  <MenuItem>SubMenuItem2</MenuItem>
+                  <MenuItem>SubMenuItem3</MenuItem>
+                </SubMenu>
+              </MenuItem>
+              <MenuItem>
+                MenuItem2
+                        <SubMenu>
+                  <MenuItem>SubMenuItem1</MenuItem>
+                  <MenuItem>SubMenuItem2</MenuItem>
+                  <MenuItem>SubMenuItem3</MenuItem>
+                </SubMenu>
+              </MenuItem>
+              <MenuItem>
+                MenuItem3
+                        <SubMenu>
+                  <MenuItem>SubMenuItem1</MenuItem>
+                  <MenuItem>SubMenuItem2</MenuItem>
+                  <MenuItem>SubMenuItem3</MenuItem>
+                </SubMenu>
+              </MenuItem>
+              <MenuItem>
+                MenuItem3
+                    </MenuItem>
+            </SubMenu>
+          </MenuItem>
+        </Menu>
+
+        <Menu dataSource={menuSource} select={this.onSelect} />
+
+        <Calendar value={this.state.dateTime} change={this.onChange} />
 
         <Grid {...gridOptions} />
       </div>
