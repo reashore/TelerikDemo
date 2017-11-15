@@ -23,7 +23,9 @@ class App extends Component {
 
   onSelect(event) {
     // eslint-disable-next-line
-    console.log("Menu item selected =", event.target)
+    console.log(event);
+    // eslint-disable-next-line
+    console.log("Menu item selected = ", event.item.textContent)
   }
 
   render() {
@@ -109,7 +111,7 @@ class App extends Component {
         <h1>Telerik Controls Demo</h1>
 
         <Menu select={this.onSelect}>
-          <MenuItem>
+          <MenuItem >
             Menu1
                 <SubMenu>
               <MenuItem>
